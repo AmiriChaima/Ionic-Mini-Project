@@ -16,12 +16,10 @@ import { OptionsPage } from '../pages/options/options';
 import { VoitureFormPage } from '../pages/voitures/voiture-form/voiture-form';
 import { AuthService } from '../services/authService.service';
 import { AuthPage } from '../pages/auth/auth';
-import { NativeStoragePage } from '../pages/native-storage/native-storage';
-import { SqllitePage } from '../pages/sqllite/sqllite';
+
 import { SQLite} from '@ionic-native/sqlite';
-import { NativeStorage } from '@ionic-native/native-storage';
-import {Camera,CameraOptions} from '@ionic-native/camera';
-import { storage } from 'firebase';
+
+import {Camera} from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -34,8 +32,7 @@ import { storage } from 'firebase';
     OptionsPage, 
     VoitureFormPage,
     AuthPage,
-    NativeStoragePage,
-    SqllitePage
+   
   ],
   imports: [
     BrowserModule,
@@ -54,8 +51,7 @@ import { storage } from 'firebase';
     OptionsPage,
     VoitureFormPage,
     AuthPage,
-    NativeStoragePage,
-    SqllitePage
+   
   ],
   providers: [
     StatusBar,
@@ -64,10 +60,9 @@ import { storage } from 'firebase';
     VoituresService,
     Voiture,
     AuthService,
-    NativeStoragePage,
-    SqllitePage,
+ ,
     SQLite,
-    NativeStorage,
+   
 
     Camera
   ]
