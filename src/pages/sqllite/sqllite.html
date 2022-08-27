@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+  <ion-title>
+  SQLite
+  </ion-title>
+  </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+  <p>Permet de stocker des données de façon structurées</p>
+  <ion-list>
+  <ion-item>
+  <ion-label fixed>Title</ion-label>
+  <ion-input type="text" [(ngModel)]="titleMovie"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label fixed>Rating</ion-label>
+  <ion-input type="text" [(ngModel)]="ratingMovie"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label fixed>Description</ion-label>
+  <ion-input type="text" [(ngModel)]="descriptionVoiture"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label fixed>Categorie</ion-label>
+  <ion-input type="text" [(ngModel)]="categorieVoiture"></ion-input>
+  </ion-item>
+  </ion-list>
+  <button ion-button clear (tap)="saveMyCar()">Save</button>
+  <ion-list *ngIf="cars">
+  <ion-item *ngFor="let v of cars">
+  <ion-label fixed>{{ v }}</ion-label>
+  </ion-item>
+  </ion-list>
+  <button ion-button clear (tap)="retrieveCars()">Récupérer les données</button>
+  </ion-content>

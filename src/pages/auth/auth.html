@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+    <ion-buttons start>
+    <button ion-button icon-only (click)="onToggleMenu()">
+    <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title *ngIf="mode === 'new'">Nouvel utilisateur</ion-title>
+    <ion-title *ngIf="mode === 'connect'">Connexion</ion-title>
+    </ion-navbar>
+    </ion-header>
+    <ion-content padding >
+      <div  id="center">
+    <img src="../assets/imgs/login.png" class="img-cl"> 
+  </div>
+  
+        <form [formGroup]="authForm">
+            <ion-list>
+            <ion-item>
+            <ion-label floating >Adresse mail</ion-label>
+            <ion-input  type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+            <ion-label floating >Mot de passe</ion-label>
+            <ion-input  type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <!--mot de passe oublié
+            <ion-item lines="none">
+                <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+              </ion-item>-->
+
+            </ion-list>
+            <button ion-button full (click)="onSubmitForm()" expand="block" shape="round">
+              <ion-icon name="log-in" class="img-bg"></ion-icon>
+              Log In</button>
+            <span ion-text color="danger">{{ errorMessage }}</span>
+
+            </form>
+         
+    </ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button icon-only (click)="onToggleMenu()" >
+            <ion-icon name="menu"></ion-icon>
+            </button>
+            </ion-buttons>
+    <ion-title>Voitures</ion-title>
+    </ion-navbar>
+    </ion-header>
+    
+    
+    
+    <ion-content padding>
+        <ion-list >
+            <button ion-item
+            icon-start
+            *ngFor="let voiture of voituresList; let i = index"
+            (click)="onLoadVoiture(i)">
+           <!--<ion-icon name="power" [color]="voiture.isOn ? 'dark' : 'danger'"></ion-icon>-->
+            {{ voiture.name }}
+            
+            <img class="voiture" [src]="voiture.url"> 
+    </button>
+
+        </ion-list>
+        
+        
+        <!--<button ion-button full (click)="onNewVoiture()">Nouvelle
+            Voiture</button>-->
+
+            <ion-fab bottom left >
+                <button ion-fab color="secondary" (click)="onNewVoiture()"><ion-icon name="add-outline">+</ion-icon></button>
+             </ion-fab>
+            <ion-card>
+                <ion-card-header>Données</ion-card-header>
+                <ion-card-content>
+                <button ion-button block outline (click)="onSaveList()">Enregistrer</button>
+                <button ion-button block outline (click)="onFetchList()">Récupérer</button>
+                </ion-card-content>
+                </ion-card>
+
+        </ion-content>
+    
+    <ion-footer padding>
+    </ion-footer>

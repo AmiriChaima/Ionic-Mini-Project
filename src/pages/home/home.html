@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+      <ion-icon name="menu"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+  </ion-header>
+  <ion-content padding class="bg-img">
+
+    <ion-list>
+      <ion-item>
+      <button ion-button (click)="addPhoto()" color="dark"
+      expand="block">
+      <ion-icon name="image" slot="start"></ion-icon>
+      Ouvrir la bibliothèque
+      </button>
+      </ion-item>
+      <ion-item>
+      <div class="flex">
+      <div class="img-box">
+      <img [src]="image">
+      </div>
+      </div>
+      </ion-item>
+      </ion-list>
+      <button ion-button (click)="addPhoto('camera')" 
+      color="danger" expand="block">
+      <ion-icon name="camera" slot="start"></ion-icon>
+      Prendre une photo
+      </button>
+  
+  </ion-content>

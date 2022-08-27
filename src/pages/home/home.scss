@@ -1,0 +1,23 @@
+
+
+.bg-img{
+
+    background-image: url(../assets/imgs/vente.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(226, 150, 157);
+    
+}
+
+.flex {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    }
+    .img-box {
+    height: 200px;
+    overflow: hidden;
+    }
+    img {
+    height: 200px;
+    }

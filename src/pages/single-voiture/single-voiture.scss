@@ -1,0 +1,25 @@
+page-single-voiture {
+    .is-on {
+    ion-card-content, ion-card-header, ion-grid {
+    background-color: color($colors, secondary-light);
+    }
+    }
+    .is-off {
+    ion-card-content, ion-card-header, ion-grid {
+    background-color: color($colors, danger-light);
+    }
+    }
+
+
+    .bt{
+
+        float: center;
+        overflow: hidden;
+        margin-top: 10px;
+        
+   
+    }
+    
+    
+    
+    }

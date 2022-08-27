@@ -1,0 +1,94 @@
+
+<ion-header>
+  <ion-navbar>
+  <ion-buttons>
+  <button ion-button clear (click)="dismissModal()">Fermer</button>
+  </ion-buttons>
+  <ion-title>{{ voiture.name }}</ion-title>
+  </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+
+  <ion-card  [ngClass]="{'is-on': voiture.isOn, 'is-off': !voiture.isOn}">
+  <ion-card-header>{{ voiture.name }}</ion-card-header>
+  <ion-card-content>
+  <p *ngFor="let line of voiture.description">{{ line }}</p>
+
+  </ion-card-content>
+  <ion-grid>
+
+  <ion-row>
+  <ion-col>
+  <!--<button
+  ion-button
+  full
+  color="danger"
+  [disabled]="!voiture.isOn"
+  (click)="onToggleVoiture()">Plus de détails</button>
+  </ion-col>
+  <ion-col>
+  <button
+  ion-button
+  full
+  color="my-color"
+  [disabled]="voiture.isOn"
+  (click)="onToggleVoiture()">Annuler</button>-->
+  </ion-col>
+</ion-row>
+
+<div>
+  <ion-option >
+    <button ion-button expandable color="danger" class="bt" >
+    <ion-icon name="trash"></ion-icon>
+</button>
+
+</ion-option>
+
+<ion-option >
+<button ion-button expandable color="dark" class="bt">
+<ion-icon name="create"></ion-icon>
+</button>
+
+</ion-option>   
+</div>
+
+
+<!--formulaire-->
+<form #f="ngForm" (ngSubmit)="onSubmitForm(f)">
+  <ion-list>
+  <ion-item>
+  <ion-label>Plus de détails</ion-label>
+  <ion-datetime displayFormat="HH:mm" name="startTime"
+  [(ngModel)]="voiture.startTime"></ion-datetime>
+  </ion-item>
+  <ion-item>
+  <ion-label>Annuler</ion-label>
+  <ion-datetime displayFormat="HH:mm" name="endTime"
+  [(ngModel)]="voiture.endTime"></ion-datetime>
+  </ion-item>
+  </ion-list>
+  <button type="button"
+
+ion-button
+full
+color="my-color2"
+(click)="onDeleteHours()">
+Supprimer
+</button>
+
+<button type="submit"
+ion-button
+full
+color="secondary">
+Enregistrer horaires
+</button>
+</form>
+
+  <!---->
+
+
+  </ion-grid>
+ 
+  </ion-card>
+
+  </ion-content>
